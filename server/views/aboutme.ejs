@@ -1,0 +1,32 @@
+<!--
+file: aboutme.ejs
+author: Akshar Patel (301209904)
+date: OCT 3, 2022
+--> 
+<%- include('./Partials/header.ejs'); %>
+<div class="wrapper-container">
+    <%- include('./Partials/navbar.ejs'); %>
+    <!-- about me section -->
+    <section id="aboutme" class="aboutme-section">
+        <p style="margin-top: 80px; margin-bottom: 20px;"> I am a learning about Web Development and Databases to start my professional carrer in this field in near future. 
+            <br>
+            <br>
+                I have not worked on any major project but I am open for any opportunity provided.
+            <br>
+            <br>
+                I have gained some knowledge of back-end as well through courses like C# and JAVA. 
+            <br>    
+            <br>
+                Currently, I am working on various mini projects to build my strong portflio.
+            <br>
+            </p>
+
+            <div class="intro-right">
+                <!-- profile image -->
+                <img src="/Assets/img/aksharP.jpg" alt="profile image">
+            </div>
+            <br>
+        <a href="Assets/pdf/resume.pdf"><button class="resume-btn" type="submit" name="button">Checkout my Resume</button></a>
+    </section>
+</div>
+<%- include('./Partials/footer.ejs'); %>
