@@ -1,22 +1,16 @@
 /* 
 file: users.js
 author: Akshar Patel (301209904)
-date: OCT 3, 2022
+date: OCT 15, 2022
 */
 var express = require("express");
 var router = express.Router();
+let usersController = require('../controllers/user');
 
-router.get('/', userspage);
+//GET : endpoints to route to Login
+router.get("/login", usersController.displayLoginPage);
+router.post("/login", usersController.processLoginPage);
+//GET : endpoint to route to Logout
+router.get("/logout", usersController.processLogout);
 
-/* GET users listing. */
-function userspage(req, res, next) {
-  res.render(
-    'users', 
-    { 
-      title: 'Users',
-      userName: 'Hardip'
-    }
-  );
-}
-
-module.exports = router
+module.exports = router;

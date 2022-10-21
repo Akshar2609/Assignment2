@@ -1,18 +1,48 @@
 /*
 file: config/app.js
 author: Akshar Patel (301209904)
-date: OCT 3, 2022
+date: OCT 15, 2022
 */
+//module initialization
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+let session = require('express-session');
+let passport = require('passport');
+let flash = require('connect-flash');
 
+//Routing setup
 var indexRouter = require("../routes/index");
 var usersRouter = require("../routes/users");
+var contactsRouter = require("../routes/contact");
+
+// database setup
+let mongoose = require("mongoose");
+let DB = require("./db");
+
+// point mongoose to db URI
+mongoose.connect(DB.URI);
+
+let mongoDB = mongoose.connection;
+mongoDB.on("error", console.error.bind(console, "Connection Error!"));
+mongoDB.once("open", () => {
+  console.log("Welcome to MongoDB!");
+});
 
 var app = express();
+
+//Session setup
+app.use(session({
+  saveUninitialized: true,
+  resave: true,
+  secret: "sessionSecret"
+}));
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // view engine setup
 app.set("views", path.join(__dirname, "../views"));
@@ -25,8 +55,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
 
+
+//Routing configuration
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/businesscontact", contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,12 +1,10 @@
 /*
 file: controllers/index.js
 author: Akshar Patel (301209904)
-date: OCT 3, 2022
+date: OCT 15, 2022
 */
 
-let express = require("express");
-let router = express.Router();
-
+//Route To home
 module.exports.routeToHomePage = (req, res, next) => {
   res.render("index", {
     title: "Home",
@@ -14,6 +12,7 @@ module.exports.routeToHomePage = (req, res, next) => {
   });
 };
 
+//Route To about me
 module.exports.routeToAboutMe = (req, res, next) => {
   res.render("index", {
     title: "About Me",
@@ -21,6 +20,7 @@ module.exports.routeToAboutMe = (req, res, next) => {
   });
 };
 
+//Route To projects
 module.exports.routeToProjects = (req, res, next) => {
   res.render("index", {
     title: "Projects",
@@ -28,6 +28,7 @@ module.exports.routeToProjects = (req, res, next) => {
   });
 };
 
+//Route To services
 module.exports.routeToServices = (req, res, next) => {
   res.render("index", {
     title: "My Services",
@@ -35,6 +36,7 @@ module.exports.routeToServices = (req, res, next) => {
   });
 };
 
+//Route To contact me
 module.exports.routeToContactMe = (req, res, next) => {
   res.render("index", {
     title: "Contact Me",

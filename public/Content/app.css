@@ -28,6 +28,7 @@ date: OCT 3, 2022
     color: #272c58;
     font-size: 3.4em;
     text-align: left;
+    text-decoration: solid;
   }
   
   h3 {
@@ -65,11 +66,13 @@ date: OCT 3, 2022
     display: flex;
     justify-content: space-between;
     text-align: center;
+    text-shadow: #0d4895;
   }
   
   /* styling for logo*/
   .logo {
-    margin: 10px auto auto 46px;
+    
+    margin: 10px auto auto 10px;
   }
   
   /* styling for nav bar*/
@@ -77,6 +80,7 @@ date: OCT 3, 2022
     margin: 0;
     padding: 0;
     display: flex;
+    
   }
   
   .navigation-bar li {
@@ -405,6 +409,11 @@ date: OCT 3, 2022
       opacity: 0.8;
       display: none;
       width: 100%;
+    }
+
+    .logo{
+      width: 20px;
+
     }
   
     .navigation-bar.active {

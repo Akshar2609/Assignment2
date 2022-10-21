@@ -1,23 +1,22 @@
 /* 
 file: routes/index.js
 author: Akshar Patel (301209904)
-date: OCT 3, 2022
+date: OCT 15, 2022
    */
 var express = require("express");
 var router = express.Router();
 
 let indexRouteController = require("../controllers/index");
-/* GET home page. */
+//GET : endpoints to route to Home
 router.get("/", indexRouteController.routeToHomePage);
-/* GET home page. */
 router.get("/home", indexRouteController.routeToHomePage);
-/* GET aboutme page. */
+//GET : endpoint to route to About Me
 router.get("/aboutme", indexRouteController.routeToAboutMe);
-/* GET projects page. */
+//GET : endpoint to route to Projects
 router.get("/projects", indexRouteController.routeToProjects);
-/* GET services page. */
+//GET : endpoint to route to Services
 router.get("/services", indexRouteController.routeToServices);
-/* GET contact page. */
+//GET : endpoint to route to Contact Me
 router.get("/contactme", indexRouteController.routeToContactMe);
 
 module.exports = router;
