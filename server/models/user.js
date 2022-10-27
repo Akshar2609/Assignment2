@@ -1,7 +1,7 @@
 /**
  * file: models/user.js
- author: Akshar Patel (301209904)
-date: OCT 15, 2022
+ * author: Hardip Patel (301230213)
+ * date: June 23, 2022
  */
  let mongoose = require('mongoose');
  let crypto = require('crypto');

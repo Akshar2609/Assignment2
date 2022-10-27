@@ -28,7 +28,7 @@ mongoose.connect(DB.URI);
 let mongoDB = mongoose.connection;
 mongoDB.on("error", console.error.bind(console, "Connection Error!"));
 mongoDB.once("open", () => {
-  console.log("Welcome to MongoDB!");
+  console.log("Conneced to MongoDB!");
 });
 
 var app = express();
